@@ -61,7 +61,7 @@ function SetMusicData(){
     // tiempo total
     setTimeout(() => {
         media.total.innerHTML = FormatTime($('audio').duration);
-    }, 300);
+    }, 500);
 }
 
 function Play () {
