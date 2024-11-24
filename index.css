@@ -1,0 +1,236 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+:root{
+    --primary-color: #C93B76;
+    --bg-1: #212936;
+    --bg-2: #4D5562;
+    --white: #E5E7EB;
+    --alternative: #121826a6;
+}
+
+
+body{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(45deg, #752245 0%, #10105b 100%);
+    display: flex;
+}
+
+main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.media{
+    width: 90%;
+    height: 80%;
+    display: grid;
+    grid-template-rows: 380px 1fr 1fr 1fr;
+    padding: 16px;
+    border-radius: 12px;
+    background-color: var(--alternative);
+}
+
+.media .album-box{
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.album-box img{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.media .title-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+}
+
+.title-box h1{
+    font-weight: bold;
+    color: var(--white);
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+.title-box h2{
+    font-weight: 300;
+    color: var(--bg-2);
+    font-size: 1rem;
+    text-align: center;
+}
+
+.title-box h3{
+    font-weight: 300;
+    color: var(--white);
+    font-size: 1rem;
+    text-align: center;
+}
+
+.title-box h1,
+.title-box h2,
+.title-box h3 {
+    white-space: nowrap;       
+    overflow: hidden;          
+    text-overflow: ellipsis;  
+    width: 90%; 
+}
+
+.data{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 8px;
+}
+
+.data .times {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 4px;
+    color: var(--bg-2);
+}
+
+.data .progress-bar-out{
+    width: 100%;
+    height: 8px;
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.data .progress-bar-in{
+    width: 0%;
+    height: 100%;
+    background: var(--primary-color);
+    border-radius: 12px;
+    transition: width linear 0.1s;
+}
+
+.buttons{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.buttons .play{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 99px;
+    background: var(--primary-color);
+    border: none;
+}
+
+.play h2{
+    display: none;
+    color: var(--white);
+    letter-spacing: 4px;
+    font-weight: bold;
+    margin-left: 2px;
+}
+
+.play div {
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;  
+    border-right: 12px solid transparent; 
+    border-bottom: 20px solid var(--white); 
+    transform: rotate(90deg);
+    margin-left: 4px;
+}
+
+.play:hover{
+    background-color: var(--white);
+}
+
+.play:hover div{
+    border-bottom: 20px solid var(--primary-color); 
+}
+
+.play:hover h2 {
+    color: var(--primary-color);
+}
+
+.buttons .next,
+.buttons .prev {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    gap: 6px;
+    background-color: transparent;
+    border: none;
+    color: var(--bg-2);
+}
+
+.buttons .prev div{
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;  
+    border-right: 8px solid transparent; 
+    border-bottom: 16px solid var(--bg-2); 
+    transform: rotate(-90deg);
+}
+
+.buttons .next div {
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;  
+    border-right: 8px solid transparent; 
+    border-bottom: 16px solid var(--bg-2); 
+    transform: rotate(90deg);
+}
+
+.buttons .next:hover div,
+.buttons .prev:hover div{
+    border-bottom: 16px solid var(--white); 
+}
+
+.buttons .next:hover h4,
+.buttons .prev:hover h4{
+    color: var(--white);
+}
+
+
+audio{
+    display: none;
+}
+
+
+button {
+    cursor: pointer;
+}
+
+
+@media ( width >= 500px) {
+    .media{
+        width: 300px;
+        height: 500px;
+        grid-template-rows: 280px 1fr 1fr 1fr;
+    }
+}

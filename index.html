@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Music player</title>
+
+    <link rel="stylesheet" href="./index.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" 
+    rel="stylesheet">
+
+</head>
+<body>
+    <main>
+        <audio controls></audio>
+        <article class='media'>
+            <!-- Album, poster img -->
+            <picture class="album-box" >
+                <img 
+                    id="album-poster"
+                    src=""
+                    alt=""
+                >
+            </picture>
+            <!-- Title , Album name, artist -->
+            <div class="title-box">
+                <h1></h1>
+                <h2></h2>
+                <h3></h3>
+            </div>
+            <!-- times,progress-bar -->
+            <div class="data">
+                <!-- tiempos de canción -->
+                <span class="times">
+                    <h4 id="current">-</h4>
+                    <h4 id="total">-</h4>
+                </span>
+                <!-- barra de reproducción -->
+                <div 
+                    class="progress-bar-out"
+                    onclick="seekAudio(event)"
+                >
+                    <div class="progress-bar-in" ></div>
+                </div>
+            </div>
+            <!-- buttons -->
+            <div class="buttons">
+                <button
+                    class="prev"
+                    onclick="NextMusic()"
+                 >
+                    <h4>
+                        ||
+                    </h4>
+                    <div></div>
+                </button>
+
+
+                <button 
+                    class="play"
+                    onclick="Play()"
+                >
+                    <h2>
+                        ||
+                    </h2>
+
+                    <div></div>
+                </button>
+
+                <button 
+                    class="next"
+                    onclick="NextMusic()"
+                >
+                    <div></div>
+                    <h4>||</h4>
+                </button>
+            </div>
+        </article>
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+</html>
