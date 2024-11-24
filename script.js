@@ -52,9 +52,7 @@ function SetMusicData(){
     media.album.innerHTML = '';
     media.total.innerHTML = '';
     // ubicacion del archivo
-    console.log(musics[actualTrack].src);
     $('audio').src = musics[actualTrack].src;
-
     // Agregar datos
     media.poster.src = musics[actualTrack].poster; // imagen
     media.title.innerHTML = musics[actualTrack].title; // titulo
@@ -119,8 +117,12 @@ const musics = [
     })
 ]
 
-
 SetMusicData();
+
+$('audio').addEventListener('canplaythrough',()=>{
+    $('.spinner').style.display = 'none';
+    $('.media').style.display = 'grid';
+})
 
 // Avanza a la siguiente musica al terminar la actual
 $('audio').addEventListener('ended',()=>{
