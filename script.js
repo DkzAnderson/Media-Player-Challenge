@@ -52,8 +52,9 @@ function SetMusicData(){
     media.album.innerHTML = '';
     media.total.innerHTML = '';
     // ubicacion del archivo
-    $('audio').src = musics[actualTrack].src;
     console.log(musics[actualTrack].src);
+    $('audio').src = musics[actualTrack].src;
+
     // Agregar datos
     media.poster.src = musics[actualTrack].poster; // imagen
     media.title.innerHTML = musics[actualTrack].title; // titulo
