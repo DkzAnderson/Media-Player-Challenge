@@ -87,7 +87,7 @@ class Track {
         this.album = album;
         this.artist = artist;
 
-        this.src = `/musics/${src}`;
+        this.src = `./musics/${src}`;
     }
 }
 
@@ -118,7 +118,7 @@ const musics = [
 ]
 
 SetMusicData();
-
+// Evalua cuando el archivo esta cargado
 $('audio').addEventListener('canplaythrough',()=>{
     $('.spinner').style.display = 'none';
     $('.media').style.display = 'grid';
