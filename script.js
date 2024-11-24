@@ -22,7 +22,6 @@ function FormatTime(seconds) {
     return `${minutes}:${secs}`;
 }
 
-
 function NextMusic (){
     // Avanzar en el arreglo de musicas
     if(actualTrack >= (musics.length-1)){
@@ -77,10 +76,6 @@ function Play () {
     }
 }
 
-function SetProgressBar(){
-
-}
-
 
 class Track {
     constructor({
@@ -121,7 +116,6 @@ const musics = [
         src: 'Arcane-Handclap.m4a',
     })
 ]
-
 
 
 SetMusicData();
