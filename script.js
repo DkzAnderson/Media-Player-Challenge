@@ -58,10 +58,6 @@ function SetMusicData(){
     media.title.innerHTML = musics[actualTrack].title; // titulo
     media.artist.innerHTML = musics[actualTrack].artist; // artista
     media.album.innerHTML = musics[actualTrack].album;
-    // tiempo total
-    setTimeout(() => {
-        media.total.innerHTML = FormatTime($('audio').duration);
-    }, 500);
 }
 
 function Play () {
@@ -122,6 +118,7 @@ SetMusicData();
 $('audio').addEventListener('canplaythrough',()=>{
     $('.spinner').style.display = 'none';
     $('.media').style.display = 'grid';
+    media.total.innerHTML = FormatTime($('audio').duration);
 })
 
 // Avanza a la siguiente musica al terminar la actual
